@@ -1,8 +1,7 @@
 package com.example
 
 import akka.actor.typed.scaladsl.Behaviors
-import akka.actor.typed.{ActorRef, ActorSystem, Behavior}
-import com.example.GreeterMain.Start
+import akka.actor.typed.{ActorRef, Behavior}
 
 object Greeter {
   final case class Greet(whom: String, replyTo: ActorRef[Greeted])
@@ -48,8 +47,8 @@ object GreeterMain {
   }
 }
 
-object AkkaQuickstart extends App {
-  val greeterMain: ActorSystem[GreeterMain.Start] = ActorSystem(GreeterMain(), "AkkaQuickStart")
-  greeterMain ! Start("Charles")
-
-}
+//object AkkaQuickstart extends App {
+//  val greeterMain: ActorSystem[GreeterMain.Start] = ActorSystem(GreeterMain(), "AkkaQuickStart")
+//  greeterMain ! Start("Charles")
+//
+//}
